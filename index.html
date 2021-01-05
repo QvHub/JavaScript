@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>JAVASCRIPT par Enes Barut | Fanny Billet | Quentin Vautier</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		p {
+			text-align: left;
+		}
+
+		.m {
+			width: 50%;
+			float: left;
+			font-size: 1.35rem;
+			padding: 0px;
+		}
+
+		.top {
+			padding-top: 4.5rem;
+		}
+	</style>
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<h1>Javascript</h1>
+				<img src="img/js.png" alt="logo-js" style="width: 25%;" />
+				</br>
+				<span style="font-size: 1rem;"> Enes Barut | Fanny Billet | Quentin Vautier</span>
+			</section>
+
+			<section>
+				<h1>Qu'est-ce que JavaScript ?</h1>
+			</section>
+
+			<section>
+				<section>
+					<h2> Définition générale </h2>
+				</section>
+
+				<section>
+					<p>Le JavaScript (JS) est un langage de script incorporé dans un document HTML.</p>
+					<p> Langage de script : langage interprété comme Python.</p>
+					<p> Historiquement il s'agit même du premier langage de script pour le Web. C’est un langage de
+						programmation qui permet d'apporter des améliorations au langage HTML.</p>
+				</section>
+
+				<section>
+					<p> Créé en 10 jours par Brendan Eich en 1995, la première version de JS s’appelait Mocha. La
+						syntaxe ressemblait à du Java, mais il contenait déjà des fonctionnalités du JS d’aujourd’hui.*
+						Il était conçu pour le navigateur Netscape, pour le rendre + dynamique. </p>
+				</section>
+
+				<section>
+					<p> Il a ensuite été renommé LiveScript pour des raisons marketing, puis JavaScript, pour les mêmes
+						raisons. (Java étant très connu à l’époque, il a été décidé qu’un positionnement en tant que
+						“petit frère de Java” serait utile.)</p>
+					<p> Il est devenu le langage central du web, c’est le langage le + utilisé sur Github.</p>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h2>A quoi ça sert ? </h2>
+				</section>
+
+				<section>
+					<p>JavaScript apporte de l'interactivité et du dynamisme aux sites web. Il a été créé initialement
+						pour “rendre les pages web vivantes”.</p>
+					<p> Par exemple lorsque l'internaute clique sur certains endroits de la page le Javascript est
+						capable de récupérer ces clics puis de réagir à ces clics en exécutant une liste d'instructions
+						choisies par le programmeur.
+					</p>
+				</section>
+
+				<section>
+					<p> Aujourd’hui, on peut presque tout faire avec JS : des applis web, des “progressives web apps”,
+						apps mobiles et tablettes hybrides, logiciels, serveur HTTP et API back-end (Node.js), apps TV
+						et objets connectés, jeux, VR, animations et interface riches, animations autonomes (pour
+						remplacer Flash)...</p>
+				</section>
+
+
+				<section>
+					<h3>R I P - Flash</h3>
+					<div>1 minuite de silence</div>
+				</section>
+
+			</section>
+
+			<section>
+				<h2>“Any application that can be written in JavaScript, will eventually be written in JavaScript.”</h2>
+				<strong>citation de Jeff Atwood (co-fondateur de Stack Overflow), connue sous le nom de “Atwood’s Law”
+					(2007)
+				</strong>
+			</section>
+
+			<section>
+				<section>
+					<h2>JavaScript engine</h2> <span>(moteur JavaScript)</span>
+				</section>
+				<section>
+					<p>Aujourd’hui, JS peut s'exécuter sur un navigateur mais aussi sur n’importe quelle machine qui a
+						un programme spécial : le JavaScript engine. Il sont généralement déjà intégrés dans les
+						navigateurs web. </p>
+					<p>Le 1er JS engine a été créé en même temps que la 1ere version de JS. Au début, c’était un
+						interpréteur assez rudimentaire qui a évolué pour devenir aujourd’hui SpiderMonkey, l’engine
+						utilisé pour Firefox. </p>
+				</section>
+
+				<section>
+					<p> Le 1er engine “moderne” était V8, pour Chrome, en 2008. Ses performances étaient bien meilleures
+						que n’importe quel engine précédent. L’innovation clé était la “just-in-time compilation”
+						(compilation à la volée) qui améliore considérablement les temps d'exécution. V8 est l’engine le
+						plus utilisé aujourd’hui.</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>ECMAScript</h2>
+				</section>
+
+				<section>
+					<p>Il y a d’autres langages de script “concurrents” de JS, le 1er étant JScript, sorti en 1996 par
+						Microsoft pour Internet Explorer 3. Il y a aussi ActionScript, utilisé pour Adobe Flash (RIP).
+					</p>
+					<p>L'ECMAScript a vu le jour en 1997 dans le but d'uniformiser l'interprétation de ces différents
+						langages de script. C’est un ensemble de normes standardisées par Ecma International (qui est
+						une organisation de standardisation) dans le cadre de la spécification ECMA-262.</p>
+				</section>
+
+				<section>
+					<p>Qui dit “différents” langages de script, dit “différents” engines (par exemple l’engine
+						Chakra(JScript) pour Internet Explorer, il y a une version Chakra(JS) pour Microsoft Edge). Ils
+						sont aussi regroupés dans ce qu’on appelle les “ECMAScript engines”.*</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Que fait le JS sur votre page </br>Comment ça marche ?</h2>
+				</section>
+
+				<section>
+					<p>Le Javascript contrairement à HTML et à CSS est un vrai langage de programmation avec variables,
+						tests de conditions, boucles et fonctions avec en plus deux choses essentielles qui sont :</p>
+					<p>1 - L'interface avec le document.</p>
+					<p>2 - Le canal de communication avec le serveur (AJAX).</p>
+				</section>
+
+				<section>
+					<div class="m top">
+
+						<p>- L'internaute clique sur une zone du document.</p>
+						<p>- Le clic est transmis au Javascript.</p>
+						<p>- Javascript va chercher des données sur le serveur.</p>
+						<p>- Javascript se sert des données pour mettre à jour le document.</p>
+						<p>- Le document est devenu interactif et dynamique !</p>
+					</div>
+					<div class="m">
+						<img src="img/02.png" alt="02.png" style="width: 100%; background-color: blue;">
+					</div>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h2>Coté client</h2>
+				</section>
+
+				<section>
+					<p>
+					<pre><code data-trim data-noescape>
+
+						Alert & prompt : window.alert(message);
+
+						// La méthode alert permet d'afficher une boîte de dialogue
+						// avec un message.
+
+						let message = "Mon message";
+
+						alert(message);
+
+					</code></pre>
+					</p>
+				</section>
+
+				<section>
+					<img src="img/03.png" alt="img 03">
+				</section>
+
+				<section>
+					<p>
+					<pre><code data-trim data-noescape>
+
+						Alert & prompt : window.prompt(message, défaut);
+						
+						// La méthode prompt permet d'afficher une boîte de dialogue
+						// avec un message qui invite l'utilisateur à saisir un texte
+						
+						let messageSasie = prompt("Votre message") 
+						
+						typeof messageSaisie; // "String"
+
+					</code></pre>
+					</p>
+				</section>
+
+				<section>
+					<img src="img/04.png" alt="img 04">
+				</section>
+
+
+
+			</section>
+
+			<section>
+				<section>
+					<h2>Ajax et Json</h2>
+				</section>
+
+				<section>
+					<h2>AJAX</h2> <span>(Asynchronous JavaScript and XML)</span>
+				</section>
+
+				<section style="font-size: 1.75rem;">
+					<p>Permet aux pages Web d’envoyer et de recevoir des données d’un serveur</p>
+					<p>évite aux clients d’attendre longtemps la réponse du serveur</p>
+					<p>C’est un ensemble de technologies :</p>
+					<ul>
+						<li>HTML (ou XHTML) et CSS pour la présentation</li>
+						<li>Le Document Object Model (DOM) pour l’affichage dynamique et l’interaction avec les données
+						</li>
+						<li>XML pour l’échange de données et XSLT pour sa manipulation</li>
+						<li>L’objet XMLHttpRequest pour la communication asynchrone</li>
+						<li>JavaScript pour rassembler ces technologies</li>
+					</ul>
+				</section>
+				<section>
+
+					<h2>JSON</h2> <span>(JavaScript Object Notation)</span>
+
+				</section>
+
+				<section style="font-size: 1.75rem;">
+					<p>Stocker des informations de manière organisée</p>
+					<p>facile d’accès et lisible par l’homme</p>
+					<p>facile pour les machines d’analyser et de générer une résultat</p>
+					<p>Json.org définit JSON comme étant construit sur deux structures :</p>
+					<ul>
+						<li><strong>Une collection de paires nom/valeur.</strong> Dans d’autre langages, ceci est
+							réalisé sous forme d’objet, enregistrement, structure, dictionnaire, table de hachage ou
+							tableau associatif.
+						</li>
+						<li><strong>Une liste ordonnée de valeurs.</strong> Dans d’autre langages, cela est réalisé sous
+							forme d’un tableau, vecteur, liste ou séquence.</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h2>Coté serveur</h2>
+				</section>
+
+				<section>
+					<p>Node.js, le cas le plus connu, né en 2009 des mains de Ryan Dahl</p>
+					<p>APE pour Ajax Push Engine</p>
+					<p>Vert.x</p>
+
+					<img src="img/05.png" alt="05">
+				</section>
+
+
+			</section>
+
+			<section>
+				<h2>Site statique</h2>
+				<img src="img/06.png" alt="">
+			</section>
+
+			<section>
+				<h2>Site dynamique</h2>
+				<img src="img/07.png" alt="">
+			</section>
+
+			<section>
+				<section>
+					<h2>
+						Ou placer du Javascript </br>& </br> Comment executer du javascript ?
+					</h2>
+				</section>
+				<section>
+					<img src="img/08.png" alt="08">
+				</section>
+				<section>
+					<p>
+					<pre>
+							<code  style="font-size: 1rem;">
+								<script type="text/template"><button onclick="createParagraph()" id="mycta"> Cliquez-moi! </button></script>
+							</code>
+						</pre>
+					</p>
+
+					<p style="font-size: 1.5rem;">C’est une mauvaise habitude de polluer le HTML avec du JavaScript, en
+						plus d’être inefficace. Dans cette méthode, on doit inclure l’attribut
+						onclick="createParagraph()" sur chaque bouton où le JavaScript doit s’appliquer.
+					</p>
+
+					<p>
+					<pre>
+							<code  style="font-size: 1rem;">var el = document.getElementById("mycta");el.addEventListener("click", createParagraph);</code>
+						</pre>
+					</p>
+
+				</section>
+			</section>
+
+
+
+			<section>
+				<section>
+					<h2>Exemple</h2>
+				</section>
+
+				<section>
+					<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result"
+						data-user="QuentinV" data-slug-hash="ExgLwjV" data-preview="true"
+						style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+						data-pen-title="ExgLwjV">
+						<span>See the Pen <a href="https://codepen.io/QuentinV/pen/ExgLwjV">
+								ExgLwjV</a> by QuentinV (<a href="https://codepen.io/QuentinV">@QuentinV</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+					</p>
+					<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+					<a href="https://codepen.io/QuentinV/pen/ExgLwjV?editors=1111"
+						style="font-size: 1rem;">https://codepen.io/QuentinV/pen/ExgLwjV?editors=1111</a>
+					<a href="https://developer.mozilla.org/fr/docs/Apprendre/JavaScript/Client-side_web_APIs/Manipulating_documents
+					  " style="font-size: 1rem;">https://developer.mozilla.org/
+					</a>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2> Javascript et Webscrapting </h2>
+					<span>Web Scraping de contenu JavaScript en Python</span>
+					</br>
+					<a style="font-size: 1rem;"
+						href="https://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python">link
+						stackoverflow</a>
+					<i style="font-size: 1rem;">|</i>
+					<a style="font-size: 1rem;" href="https://www.youtube.com/watch?v=gKT_tg87H5Y">Youtube</a>
+				</section>
+
+				<section>
+					<img src="img/09.png" alt="">
+				</section>
+
+				<section>
+					<img src="img/10.png" alt="">
+				</section>
+
+				<section>
+					<h3>requests-html</h3>
+					<p style="font-size: 1.5rem;">1 -Demande à l'url de la page :</p>
+					<pre><code  style="font-size: 1rem;"data-trim data-noescape>
+					from requests_html import HTMLSession
+					session = HTMLSession()
+					r = session.get(a_page_url)
+					</code></pre>
+					<p style="font-size: 1.5rem;">2 - Rendez la réponse pour obtenir les bits générés par Javascript :
+					</p>
+					<pre><code  style="font-size: 1rem;" data-trim data-noescape>
+					r.html.render()
+					</code></pre>
+
+					<div style='font-size: 0.7em;'>
+
+						<h5 style="text-align: left; margin-left: 3rem;">exemple : </h5>
+						<pre><code data-trim data-noescape>
+						from requests_html import HTMLSession
+
+						session = HTMLSession()
+
+						r = session.get('http://python-requests.org/')
+
+						r.html.render()
+						r.html.search('Python 2 will retire in only {months} months!')['months']
+						'<time>25</time>' #This is the result.
+						</code></pre>
+					</div>
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h2>Les bibliothèques et frameworks</h2>
+				</section>
+
+				<section>
+					<p> <strong>Les bibliothèques</strong></br>Une bibliothèque est un ensemble de fonctions fournies en
+						développement, que ce soient des classes ou un ensemble de fichiers objets. </p>
+				</section>
+
+				<section>
+					<p> <strong>Les frameworks</strong></br>Les frameworks (cadre de travail ou boîte à outils) n’est
+						pas un programme indépendant, mais plutôt un ensemble cohérent de composants (comme les
+						bibliothèques et les classes par exemple). Les frameworks constituent l’architecture logicielle
+						d’une application et conditionnent considérablement le processus de développement.</p>
+				</section>
+
+				<section>
+					<h3>Frameworks</h3>
+					<span>AngularJS | Vue JS | Ember </span>
+					<span>...</span>
+				</section>
+
+				<section>
+					<h3>Bibliothèques</h3>
+					<span>JQuery| React | D3.js | ThreeJS </span>
+					<span>...</span>
+				</section>
+			</section>
+
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
